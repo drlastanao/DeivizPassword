@@ -70,7 +70,7 @@ namespace DeivizPassword
 
                     foreach (var linea in lineas)
                     {
-                        if (contador >0) {
+                        if (contador >0 && linea!="") {
 
 
                             string[] datosleidos = linea.Split(';');
@@ -118,6 +118,28 @@ namespace DeivizPassword
             sw.Close();
 
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text!="")
+            {
+                int g = 0;
+                while (g<dataGridView1.Rows.Count)
+                {
+                    if (dataGridView1.Rows[g].Cells[0].Value.ToString().Contains(textBox1.Text))
+                        break;
+                    g++;
+                }
+
+                if (g < dataGridView1.Rows.Count)
+                {
+                    dataGridView1.Rows[g].Selected = true;
+                    dataGridView1.CurrentCell = dataGridView1.Rows[g].Cells[0];
+                }
+
+
+            }
         }
     }
 }
