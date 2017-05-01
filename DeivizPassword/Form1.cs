@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace DeivizPassword
 {
     public partial class Form1 : Form
@@ -15,6 +16,14 @@ namespace DeivizPassword
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String clave = new GeneradorPassword(25, 34, 33, 33).GetNewPassword();
+            textBox1.Text = clave;
+
+
         }
     }
 }
