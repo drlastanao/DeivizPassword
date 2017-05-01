@@ -20,7 +20,7 @@ namespace DeivizPassword
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String clave = new GeneradorPassword(25, 34, 33, 33).GetNewPassword();
+            String clave = new GeneradorPassword(25, 42, 15, 33).GetNewPassword();
             textBox1.Text = clave;
 
 
